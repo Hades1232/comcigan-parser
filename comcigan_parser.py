@@ -1,7 +1,5 @@
 import asyncio
-from email import header
 import json
-from sqlite3 import Time
 import requests
 import re
 import base64
@@ -13,20 +11,13 @@ HEADERS = {'User-Agent': 'Mozilla/5.0'}
 HOST_LINK = "http://컴시간학생.kr"
 
 
-
-
-
 school_name = "경기"
-
-
-
-
 
 class Timetable:
   def __init__(self):
      self.base_url = None
      self.port_url = None
-     self.option = {"maxGrade" : 3} # 속도 제어
+     self.option = {"maxGrade" : 3}
      self.page_source = None
      self.school_ra = None
      self.sc_data = None 
@@ -96,12 +87,7 @@ class Timetable:
 
       if len(chose_school_info) <= 0: raise Exception("입력된 학교가 존재하지 않습니다!")
       self.school_list = school_list
-      #return school_list
-      # region = chose_school_info[0][1]
-      # school_name = chose_school_info[0][2]
-      # code = str(chose_school_info[0][3])
-
-      # return {"region" : region, "school_name" : school_name, "code" : code}
+     
 
   async def set_school(self, school_code):
      self.school_code = str(school_code)
