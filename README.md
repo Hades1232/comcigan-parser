@@ -153,7 +153,7 @@ Return - `string[]`
 ```python
 import comcigan_parser
 timetable = comcigan_parser.Timetable()
-
+```
 
 ---
 
