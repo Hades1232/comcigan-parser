@@ -231,29 +231,13 @@ code = await class_name.get_school_name("광명경영회계고등학교", "경�
 await class_name.set_school(code)
 await class_name.get_data()
 res = await class_name.get_timetable()
-print(res[0]) # 시간표
-print(res[1]) # 수업시간정보
+
+print(res[0]) # 전교 시간표 정보 조회
+print(res[1]) # 각 교시별 수업 시작/종료 시간 정보 조회
 
 ```
 
-```javascript
-const Timetable = require('comcigan-parser');
-const timetable = new Timetable();
 
-const test = async () => {
-  await timetable.init();
-  const school = await timetable.search('광명경영회계고등학교');
-  timetable.setSchool(school[0].code);
-
-  // 전교 시간표 정보 조회
-  const result = await timetable.getTimetable();
-  console.log(result);
-
-  // 각 교시별 수업 시작/종료 시간 정보 조회
-  const time = await timetable.getClassTime();
-  console.log(time);
-};
-```
 
 ## 데이터 형식
 
